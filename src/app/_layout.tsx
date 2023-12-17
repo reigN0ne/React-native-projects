@@ -6,6 +6,7 @@ import { AmaticSC_400Regular, AmaticSC_700Bold } from '@expo-google-fonts/amatic
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
+SplashScreen.preventAutoHideAsync();
 const RootLayout = () => {
     const [fontsLoaded, error] = useFonts({
         Inter: Inter_900Black,
