@@ -1,10 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ActivityIndicator } from 'react-native';
 import DayListItem from './src/components/core/DayListItem';
+import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import { MountainsofChristmas_400Regular, MountainsofChristmas_700Bold } from '@expo-google-fonts/mountains-of-christmas';
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from 'react';
 
+SplashScreen.preventAutoHideAsync();
 const days = [...Array(24)].map((val, index) => index+1);
 
 export default function App() {
+  
+  const [fontsLoaded, error] = useFonts({
+    Inter: Inter_900Black,
+    Christmas: MountainsofChristmas_400Regular,
+    ChristmasBold: MountainsofChristmas_700Bold,
+  });
+  
+  useEffect(() => {
+    if (fontsLoaded || error) {
+      // return <ActivityIndicator />
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, error]);
+
+  if (!fontsLoaded && !error){
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <FlatList 
