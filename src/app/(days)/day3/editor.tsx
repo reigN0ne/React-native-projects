@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, ScrollView, TextInput, Pressable } from 'react-native'
-import Markdown from 'react-native-markdown-display';
+import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native'
+import { Stack } from 'expo-router';
 import MarkdownDisplay from '@components/day3/MarkdownDisplay';
 
 const template = `# Markdown Editor
@@ -14,6 +14,7 @@ const EditorScreen = () => {
 
     return (
         <View style={styles.page}>
+            <Stack.Screen options={{ title: 'Editor' }} />
             <View style={styles.tabsContainer}>
                 <Pressable onPress={() => setTab('edit')} style={[
                     styles.tab, 
