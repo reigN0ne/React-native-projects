@@ -1,7 +1,7 @@
 import MarkdownDisplay from '@/components/day3/MarkdownDisplay'
 import { Link, Stack } from 'expo-router'
 import React from 'react'
-import { View, Text, Button } from 'react-native';
+import { Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const description = `
