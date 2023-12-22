@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 
 const AppartmentListItem = ({appartment}) => {
+    // console.warn(appartment);
     return (
         <View style={styles.card}>
             <Image source={{uri: appartment.image}} style={styles.image}/>
@@ -21,11 +22,11 @@ const AppartmentListItem = ({appartment}) => {
 const styles = StyleSheet.create({
     card: {
         backgroundColor: 'white',
-        position: 'absolute',
-        bottom: 70,
-        padding: 10,
-        left: 10,
-        right: 10,
+        // position: 'absolute',
+        // bottom: 70,
+        // padding: 10,
+        // left: 10,
+        // right: 10,
         
         flexDirection: 'row',
         borderRadius: 20,
