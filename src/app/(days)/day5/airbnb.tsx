@@ -47,7 +47,7 @@ const AirbnbScreen = () => {
                 region={mapRegion}
             >
                 {
-                    appartments.map((appartment) => (
+                    appartments.map((appartment: any) => (
                         <CustomMarker 
                             key={appartment.id} 
                             appartment={appartment} 
